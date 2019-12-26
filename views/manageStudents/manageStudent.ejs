@@ -30,7 +30,9 @@
                         <h3>Manage Student</h3>
                     </div>
                     <div class="card-body">
-
+                        <div class="row m-2 float-right">
+                            <a class="btn btn-outline-primary" href="/createStudent"><i class="ik ik-plus"></i> Add Student</a>
+                        </div>
                         <div class="table-responsive">
                             <table class="table table-bordered">
                                 <thead>
@@ -46,20 +48,20 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <%var count =1; for(user of users){%>
+                                <%var count =1; for(student of students){%>
                                 <tr>
                                     <td><%- count++ %></td>
-                                    <td><%- user.FirstName %></td>
-                                    <td><%- user.LastName %></td>
-                                    <td><%- user.EmailID %></td>
-                                    <td><%- user.ContactNumber %></td>
+                                    <td><%- student.FirstName %></td>
+                                    <td><%- student.LastName %></td>
+                                    <td><%- student.EmailID %></td>
+                                    <td><%- student.ContactNumber %></td>
 
                                     <td>
-                                        <a href="/editUser?_id=<%- user._id %>"
+                                        <a href="/editStudent?_id=<%- student._id %>"
                                            class="btn btn-warning btn-lg text-white"><i class="ik ik-edit"></i></a>
                                     </td>
                                     <td>
-                                        <a href="/deleteUser?_id=<%- user._id %>"
+                                        <a href="/deleteStudent?_id=<%- student._id %>"
                                            class="btn btn-danger btn-lg text-white"><i class="ik ik-trash"></i></a>
                                     </td>
                                 </tr>

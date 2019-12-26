@@ -7,4 +7,4 @@ var studentSchema=mongoose.Schema({
     EmailID: {type: String, unique: true}
 });
 
-module.exports=model.exports('students',studentSchema);
+module.exports=mongoose.model('students',studentSchema);

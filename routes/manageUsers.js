@@ -9,7 +9,7 @@ router.get('/manageUsers',function (req,res) {
     userSchema.find(function (err,users) {
 
         if(err)
-            res.render('error',{error:{atatus:500,stack:err},message:err.message});
+            res.render('error',{error:{status:500,stack:err},message:err.message});
         else
             res.render("manageUsers/manageUser",{users:users});
 
@@ -28,7 +28,7 @@ router.post('/createUser',function (req,res) {
     var newUser=new userSchema(req.body);
     newUser.save(function (err) {
         if(err)
-            res.render('error',{error:{atatus:500,stack:err},message:err.message});
+            res.render('error',{error:{status:500,stack:err},message:err.message});
         else
             res.redirect("/manageUsers");
 
@@ -41,7 +41,7 @@ router.post('/createUser',function (req,res) {
 router.get("/editUser",function (req,res) {
     userSchema.findOne({_id:req.query._id},function(err,user){
     if(err)
-        res.render('error',{error:{atatus:500,stack:err},message:err.message});
+        res.render('error', {error: {status: 500, stack: err}, message: err.message});
     else
         res.render("manageUsers/editUser",{user:user});
     });
@@ -52,7 +52,7 @@ router.get("/editUser",function (req,res) {
 router.post("/editUser",function (req,res) {
     userSchema.findOneAndUpdate({_id:req.body._id},{$set: req.body},function (err) {
         if(err)
-                 res.render('error',{error:{atatus:500,stack:err},message:err.message});
+                 res.render('error',{error:{status:500,stack:err},message:err.message});
 
     else
             res.redirect('/manageUsers');
