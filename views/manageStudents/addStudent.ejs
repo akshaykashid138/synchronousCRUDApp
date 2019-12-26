@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%include ../partials/head.ejs%>
+</head>
+
+
+<body class="animsition">
+<div class="page-wrapper">
+    <!-- HEADER MOBILE-->
+    <%include ../partials/headerMenu.ejs%>
+    <!-- END HEADER MOBILE-->
+
+    <!-- MENU SIDEBAR-->
+    <%include ../partials/sidebar.ejs%>
+    <!-- END MENU SIDEBAR-->
+
+    <!-- PAGE CONTAINER-->
+    <div class="page-container">
+        <!-- HEADER DESKTOP-->
+        <%include ../partials/headerDesktop.ejs%>
+
+        <!-- HEADER DESKTOP-->
+
+        <!-- MAIN CONTENT-->
+        <div class="container">
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="card">
+                            <div class="card-header bg-info">
+                                <h3>Add User</h3>
+                            </div>
+                            <form method="post" action="/createStudent">
+                                <div class="card-body">
+
+                                    <div class="form-row">
+                                        <div class="form-group col">
+                                            <label>First Name</label>
+                                            <input class="form-control" type="text" name="FirstName"
+                                                   placeholder="First Name"  required>
+                                        </div>
+
+                                        <div class="form-group col">
+                                            <label>Last Name</label>
+                                            <input class="form-control" type="text" name="LastName"
+                                                   placeholder="Last Name"  required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col">
+                                            <label>EmailID</label>
+                                            <input class="form-control" type="text" name="EmailID"
+                                                   placeholder="EmailID"  required>
+                                        </div>
+
+                                        <div class="form-group col">
+                                            <label>Contact</label>
+                                            <input class="form-control" type="text" name="ContactNumber"
+                                                   placeholder="Contact Number"  required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <button class="btn btn-primary mx-auto" type="submit"><i class="fa-fa-save"></i>Save Student </button>
+                                    </div>
+                                </div></form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- END MAIN CONTENT-->
+        <!-- END PAGE CONTAINER-->
+    </div>
+
+</div>
+
+<%include ../partials/bodyScriptLoader.ejs%>
+
+</body>
+
+</html>
+<!-- end document-->
